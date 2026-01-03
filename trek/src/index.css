@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Trekastra Design System - Futuristic Travel Experience */
+
+@layer base {
+  :root {
+    /* Core palette - Light mode */
+    --background: 210 25% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    /* Primary - Deep Teal */
+    --primary: 185 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Sky */
+    --secondary: 200 30% 92%;
+    --secondary-foreground: 220 30% 15%;
+
+    /* Muted */
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Warm Coral */
+    --accent: 15 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 185 70% 35%;
+    --radius: 1rem;
+
+    /* Custom Trekastra tokens */
+    --teal: 185 70% 35%;
+    --teal-glow: 185 85% 45%;
+    --coral: 15 85% 60%;
+    --coral-soft: 15 70% 65%;
+    --navy: 220 45% 12%;
+    --sky: 200 80% 70%;
+    --emerald: 160 60% 45%;
+    --gold: 40 90% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(185 70% 35%) 0%, hsl(200 80% 50%) 50%, hsl(160 60% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(15 85% 60%) 0%, hsl(40 90% 55%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(220 45% 8%) 0%, hsl(220 40% 15%) 100%);
+
+    /* Glass morphism */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+    /* Sidebar */
+    --sidebar-background: 210 25% 97%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 185 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 30% 92%;
+    --sidebar-accent-foreground: 220 30% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 185 70% 35%;
+  }
+
+  .dark {
+    --background: 220 45% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 40% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 40% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 220 45% 6%;
+
+    --secondary: 220 35% 18%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 30% 15%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 15 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 185 80% 50%;
+
+    /* Dark mode glass */
+    --glass-bg: rgba(15, 23, 42, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    --sidebar-background: 220 45% 8%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 220 45% 6%;
+    --sidebar-accent: 220 35% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 185 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply backdrop-blur-xl border rounded-2xl;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Hero gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  /* Accent gradient text */
+  .accent-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Glass button */
+  .glass-button {
+    @apply backdrop-blur-md border font-medium transition-all duration-300;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+
+  .glass-button:hover {
+    @apply scale-105;
+    box-shadow: 0 0 30px rgba(14, 165, 163, 0.3);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 163, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(14, 165, 163, 0.6);
+  }
+}
